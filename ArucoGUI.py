@@ -1798,6 +1798,7 @@ class thirdWindow(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
         self.holdCurrentValues = []
+        self.isLoaded = False
 
         self.pack_propagate(False)
         self.config(height=720, width=1280)
@@ -2176,6 +2177,8 @@ class thirdWindow(tk.Frame):
 
         self.holdCurrentValues = self.currentValues
 
+        self.isLoaded = True
+
         #If overwrite was set, new settings will be applied
         if self.overwriteFlag:
             self.applyNewValues()
@@ -2444,7 +2447,6 @@ class thirdWindow(tk.Frame):
             f.write(values)
             f.close()
 
-
             self.updateValues()
 
             self.messageLabel.config(text="Settings applied")
@@ -2485,7 +2487,8 @@ class thirdWindow(tk.Frame):
 
         self.holdCurrentValues = paraDefaults
 
-        self.updateValues()
+        if self.isLoaded:
+            self.updateValues()
 
         self.messageLabel.config(text="Settings applied")
         self.after(5000, vanishText)
