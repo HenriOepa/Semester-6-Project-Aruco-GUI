@@ -30,7 +30,7 @@ class App(tk.Tk):
 
 
     def changeIcon(self):
-        ico = Image.open('index.png')
+        ico = Image.open('misc/index.png')
         photo = ImageTk.PhotoImage(ico)
         self.wm_iconphoto(False, photo)
 
