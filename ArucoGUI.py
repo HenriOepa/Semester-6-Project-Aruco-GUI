@@ -162,6 +162,7 @@ class ArucoMain(tk.Frame):
         self.dataFiles = []
         self.numOfFiles = 0
         self.currentFile = 0
+        self.frameCount = 0
         self.canvas = None
         self.toolbar = None
         self.graphType = "acceleration"
