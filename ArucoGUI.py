@@ -955,7 +955,7 @@ class ArucoMain(tk.Frame):
             temp = glob.glob(folderName + '*.png')
 
             #Gets a non-existing image name for the saved image
-            imgPath = str(folderName) + 'image' + str(num) + '_' + str(self.timeOfUse) + '.png'
+            imgPath = str(folderName) + 'image_' + str(num) + '_' + str(self.timeOfUse) + '.png'
 
             for img in temp:
                 imgPath = str(folderName) + 'image_' + str(num) + '_' + str(self.timeOfUse) + '.png'
