@@ -30,9 +30,12 @@ class App(tk.Tk):
 
 
     def changeIcon(self):
-        ico = Image.open('misc/index.png')
-        photo = ImageTk.PhotoImage(ico)
-        self.wm_iconphoto(False, photo)
+        try:
+            ico = Image.open('misc/index.png')
+            photo = ImageTk.PhotoImage(ico)
+            self.wm_iconphoto(False, photo)
+        except FileNotFoundError:
+            return
 
     def moveWindow(self):
         window_height = 720
